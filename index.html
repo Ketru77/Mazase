@@ -7,24 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #5c4033; /* Tmavě hnědá (tlačítka, nadpisy) */
+            --primary: #5c4033; /* Tmavě hnědá (místo původní zelené) */
             --accent: #8b5a2b;  /* Středně hnědá */
-            --light: #d2b48c;   /* Světle hnědá / Tan (karty služeb) */
-            --bg-body: #e3d5ca; /* Velmi světlá hnědá (pozadí stránky) */
+            --light: #d2b48c;   /* Světle hnědá / Tan (pozadí karet) */
+            --bg-body: #e3d5ca; /* Velmi světlá hnědá (pozadí celé stránky) */
             --dark: #2b1d16;
         }
         body { font-family: 'Roboto', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); background: var(--bg-body); }
         
         header { 
-            /* Úprava pozicování obrázku */
-            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('uvod.jpeg');
+            /* Úprava pozice fotky: 85% horizontálně (vpravo) a 20% vertikálně */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('uvod.jpeg');
             background-size: cover; 
-            background-position: center 30%; /* Toto posune fotku dolů, aby byla vidět tvář */
-            background-repeat: no-repeat;
-            height: 75vh; /* Trochu vyšší banner pro lepší vyznění fotky */
+            background-position: 85% 20%; 
+            height: 75vh;
             display: flex; align-items: center; justify-content: center;
-            color: #ffffff;
-            text-align: center;
+            color: white; text-align: center;
         }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         h1 { font-size: 4.5rem; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
@@ -32,7 +30,6 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         .section { margin-bottom: 60px; text-align: center; }
         
-        /* Profilová fotka */
         .profile-img {
             width: 220px; height: 220px;
             object-fit: cover; border-radius: 50%;
@@ -103,7 +100,7 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2.8rem; }
-            header { height: 55vh; }
+            header { height: 50vh; background-position: 80% 20%; }
             .services-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -133,7 +130,7 @@
             <div class="service-card">
                 <div>
                     <h3>Speciální sportovní masáž</h3>
-                    <p class="service-desc">Účinná terapeutická metoda zaměřená na sportovce, která pomáhá zlepšit výkon, urychluje regeneraci svalů a snižuje riziko zranění. Kombinuje techniky hluboké tkáňové masáže s protahováním svalů.</p>
+                    <p class="service-desc">Účinná terapeutická metoda zaměřená na sportovce, která pomáhá zlepšit výkon, urychluje regeneraci svalů a snižuje riziko zranění. Kombinuje techniky hluboké tkáňové masáže s protahováním svalů, přinášející sportovcům úlevu a optimalizaci fyzické kondice.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>750 Kč</span></div>
@@ -144,7 +141,7 @@
             <div class="service-card">
                 <div>
                     <h3>Relaxační masáž</h3>
-                    <p class="service-desc">Slouží k uvolnění těla a mysli, odstraňuje stres a napětí, zmírňuje bolesti zad, ztuhlost šíje, přináší zklidnění a celkově osvěžuje celé tělo. Spolu s vonnými nejkvalitnějšími aroma oleji navodí stav vnitřní harmonie.</p>
+                    <p class="service-desc">Slouží k uvolnění těla a mysli, odstraňuje stres a napětí, zmírňuje bolesti zad, ztuhlost šíje, přináší zklidnění a celkově osvěžuje celé tělo. Spolu s vonnými nejkvalitnějšími aroma oleji navodí stav vnitřní harmonie a přinese příjemné uvolnění.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>400 Kč</span></div>
@@ -187,7 +184,7 @@
             <div class="service-card">
                 <div>
                     <h3>Lymfatická masáž obličeje</h3>
-                    <p class="service-desc">Příjemná masáž obličeje lehkými doteky. Odstraňuje otoky ve tváři a v očním okolí, pod bradou, na krku a působí jako prevence proti migrénám.</p>
+                    <p class="service-desc">Příjemná masáž obličeje lehkými doteky. Odstraňuje otoky ve tváři a v očním okolí, pod bradou, na krku a působí jako prevence proti migrénám. Hmatové techniky se využívají při řešení vrásek nebo hloubkovém čištění pokožky.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>400 Kč</span></div>

@@ -7,22 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #5c4033; /* Tmavě hnědá (místo původní zelené) */
+            --primary: #5c4033; /* Tmavě hnědá */
             --accent: #8b5a2b;  /* Středně hnědá */
-            --light: #d2b48c;   /* Světle hnědá / Tan (pozadí karet) */
-            --bg-body: #e3d5ca; /* Velmi světlá hnědá (pozadí celé stránky) */
+            --light: #d2b48c;   /* Světle hnědá (tan) */
+            --bg-body: #e3d5ca; /* Pozadí stránky */
             --dark: #2b1d16;
         }
         body { font-family: 'Roboto', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); background: var(--bg-body); }
         
         header { 
-            /* Úprava pozice fotky: 85% horizontálně (vpravo) a 20% vertikálně */
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('uvod.jpeg');
+            /* Změněn název obrázku na vibe.jpeg a upraveno pozicování */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('vibe.jpeg');
             background-size: cover; 
-            background-position: 85% 20%; 
-            height: 75vh;
+            background-position: center; /* Nová fotka sedí nejlépe na střed */
+            height: 70vh;
             display: flex; align-items: center; justify-content: center;
-            color: white; text-align: center;
+            color: #f6f3ef;
+            text-align: center;
         }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         h1 { font-size: 4.5rem; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
@@ -100,7 +101,7 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2.8rem; }
-            header { height: 50vh; background-position: 80% 20%; }
+            header { height: 50vh; }
             .services-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -130,7 +131,7 @@
             <div class="service-card">
                 <div>
                     <h3>Speciální sportovní masáž</h3>
-                    <p class="service-desc">Účinná terapeutická metoda zaměřená na sportovce, která pomáhá zlepšit výkon, urychluje regeneraci svalů a snižuje riziko zranění. Kombinuje techniky hluboké tkáňové masáže s protahováním svalů, přinášející sportovcům úlevu a optimalizaci fyzické kondice.</p>
+                    <p class="service-desc">Účinná terapeutická metoda zaměřená na sportovce, která pomáhá zlepšit výkon a urychluje regeneraci svalů.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>750 Kč</span></div>
@@ -141,7 +142,7 @@
             <div class="service-card">
                 <div>
                     <h3>Relaxační masáž</h3>
-                    <p class="service-desc">Slouží k uvolnění těla a mysli, odstraňuje stres a napětí, zmírňuje bolesti zad, ztuhlost šíje, přináší zklidnění a celkově osvěžuje celé tělo. Spolu s vonnými nejkvalitnějšími aroma oleji navodí stav vnitřní harmonie a přinese příjemné uvolnění.</p>
+                    <p class="service-desc">Slouží k uvolnění těla a mysli, odstraňuje stres a napětí, zmírňuje bolesti zad a ztuhlost šíje.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>400 Kč</span></div>
@@ -152,7 +153,7 @@
             <div class="service-card">
                 <div>
                     <h3>Lymfatická masáž</h3>
-                    <p class="service-desc">Lymfatická masáž je jemná masážní technika podporující správnou funkci lymfatického systému a odtoku mízy. Ta se stará o odplavování škodlivin z těla skrz čistící orgány jako ledviny nebo játra.</p>
+                    <p class="service-desc">Jemná technika podporující správnou funkci lymfatického systému pro odplavování škodlivin z těla.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>750 Kč</span></div>
@@ -163,7 +164,7 @@
             <div class="service-card">
                 <div>
                     <h3>Intuitivní masáž</h3>
-                    <p class="service-desc">Průběh je pokaždé jiný, stejně jako použité techniky. Cílem masáže je tělo zklidnit a uvolnit, energetické dráhy těla najdou opět ztracené cesty a tělo se dostane do harmonie.</p>
+                    <p class="service-desc">Průběh je pokaždé jiný. Cílem masáže je tělo zklidnit, uvolnit a navrátit do přirozené harmonie.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>800 Kč</span></div>
@@ -174,7 +175,7 @@
             <div class="service-card">
                 <div>
                     <h3>Baňkování</h3>
-                    <p class="service-desc">Přikládání skleněných nebo plastových nádobek na pokožku. Baňka se přisaje na kůži, kterou podtlak vtáhne dovnitř. Pokožka se prudce prokrví a zčervená.</p>
+                    <p class="service-desc">Uvolnění hlubokých blokád pomocí podtlaku. Pokožka se prudce prokrví a uvolní se napětí.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>750 Kč</span></div>
@@ -184,7 +185,7 @@
             <div class="service-card">
                 <div>
                     <h3>Lymfatická masáž obličeje</h3>
-                    <p class="service-desc">Příjemná masáž obličeje lehkými doteky. Odstraňuje otoky ve tváři a v očním okolí, pod bradou, na krku a působí jako prevence proti migrénám. Hmatové techniky se využívají při řešení vrásek nebo hloubkovém čištění pokožky.</p>
+                    <p class="service-desc">Odstraňuje otoky ve tváři a v očním okolí, pod bradou a na krku. Působí jako prevence proti migrénám.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>400 Kč</span></div>

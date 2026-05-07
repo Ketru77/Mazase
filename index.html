@@ -7,21 +7,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #5d7a6a; /* Relaxační zelená */
-            --accent: #d4a373;  /* Zlatavá/písková */
-            --light: #f6f3ef;
-            --dark: #333;
+            --primary: #5c4033; /* Tmavě hnědá */
+            --accent: #8b5a2b;  /* Středně hnědá pro detaily */
+            --light: #d2b48c;   /* Světle hnědá / Tan (pozadí sekcí) */
+            --bg-body: #e3d5ca; /* Velmi světlá hnědá na pozadí celé stránky */
+            --dark: #2b1d16;
         }
-        body { font-family: 'Roboto', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); background: #fff; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); background: var(--bg-body); }
         
         header { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
-            height: 40vh; display: flex; align-items: center; justify-content: center;
-            color: white; text-align: center;
+            /* Zde je ta změna, ukazujeme na novou fotku uvod.jpg */
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('uvod.jpg');
+            background-size: cover; 
+            background-position: center 20%; /* Trochu posuneme, aby byly vidět stíny na rameni */
+            height: 70vh; /* Banner trochu vyšší, ať fotka vynikne */
+            display: flex; align-items: center; justify-content: center;
+            color: #f6f3ef; /* Světlá krémová barva textu, ať je to čitelné */
+            text-align: center;
         }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        h1 { font-size: 3.5rem; margin: 0; letter-spacing: 2px; }
+        h1 { font-size: 4.5rem; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
         
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         .section { margin-bottom: 60px; text-align: center; }
@@ -52,26 +57,27 @@
             flex-direction: column;
             justify-content: space-between;
             border-bottom: 4px solid transparent;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         .service-card:hover {
             transform: translateY(-5px);
-            border-bottom: 4px solid var(--accent);
+            border-bottom: 4px solid var(--primary);
         }
         .service-card h3 {
             margin-top: 0;
             color: var(--primary);
             font-size: 1.5rem;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
             padding-bottom: 10px;
         }
         .service-desc {
             font-size: 0.95rem;
-            color: #555;
+            color: var(--dark);
             margin-bottom: 20px;
             flex-grow: 1;
         }
         .service-price {
-            background: white;
+            background: rgba(255, 255, 255, 0.5);
             padding: 10px 15px;
             border-radius: 10px;
             font-weight: bold;
@@ -86,14 +92,19 @@
         .btn { 
             background: var(--primary); color: white; padding: 15px 35px; 
             text-decoration: none; border-radius: 30px; display: inline-block; 
-            transition: 0.3s; margin-top: 20px; font-weight: bold;
+            transition: 0.3s; margin-top: 30px; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
         }
-        .btn:hover { background: var(--accent); }
+        .btn:hover { background: var(--accent); transform: scale(1.05); }
         .contact-card { padding: 40px; background: var(--primary); color: white; border-radius: 15px; }
         .contact-link { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.4rem; }
         
+        footer { background: var(--dark); color: #a18e81; text-align: center; padding: 20px; }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
+            h1 { font-size: 2.8rem; }
+            header { height: 50vh; }
             .services-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -108,7 +119,6 @@
 </header>
 
 <div class="container">
-    <!-- O mně sekce -->
     <section class="section">
         <h2>Vaše masérka Gabriela</h2>
         <img src="gabriela.jpg" alt="Gabriela Kubíková" class="profile-img">
@@ -118,16 +128,14 @@
         </div>
     </section>
 
-    <!-- Nabídka masáží sekce -->
     <section class="section" id="sluzby">
         <h2>Nabídka masáží</h2>
         <div class="services-grid">
             
-            <!-- Sportovní masáž -->
             <div class="service-card">
                 <div>
                     <h3>Speciální sportovní masáž</h3>
-                    <p class="service-desc">Účinná terapeutická metoda zaměřená na sportovce, která pomáhá zlepšit výkon, urychluje regeneraci svalů a snižuje riziko zranění. Kombinuje techniky hluboké tkáňové masáže s protahováním svalů.</p>
+                    <p class="service-desc">Účinná terapeutická metoda zaměřená na sportovce, která pomáhá zlepšit výkon, urychluje regeneraci svalů a snižuje riziko zranění.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>450 Kč</span></div>
@@ -135,11 +143,10 @@
                 </div>
             </div>
 
-            <!-- Relaxační masáž -->
             <div class="service-card">
                 <div>
                     <h3>Relaxační masáž</h3>
-                    <p class="service-desc">Slouží k uvolnění těla i mysli, odstraňuje stres a napětí, zmírňuje bolesti zad, ztuhlost šíje, přináší zklidnění a celkově osvěžuje celé tělo. Spolu s vonnými aroma oleji navodí stav vnitřní harmonie.</p>
+                    <p class="service-desc">Slouží k uvolnění těla i mysli, odstraňuje stres a napětí, zmírňuje bolesti zad, ztuhlost šíje a přináší celkové zklidnění.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>450 Kč</span></div>
@@ -147,11 +154,10 @@
                 </div>
             </div>
 
-            <!-- Lymfatická masáž -->
             <div class="service-card">
                 <div>
                     <h3>Lymfatická masáž</h3>
-                    <p class="service-desc">Jemná masážní technika podporující správnou funkci lymfatického systému a odtoku mízy. Ta se stará o odplavování škodlivin z těla skrz čistící orgány jako ledviny nebo játra.</p>
+                    <p class="service-desc">Jemná masážní technika podporující správnou funkci lymfatického systému a odtoku mízy pro odplavení škodlivin.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>850 Kč</span></div>
@@ -159,11 +165,10 @@
                 </div>
             </div>
 
-            <!-- Intuitivní masáž -->
             <div class="service-card">
                 <div>
                     <h3>Intuitivní masáž</h3>
-                    <p class="service-desc">Průběh je pokaždé jiný, stejně jako použité techniky. Cílem masáže je tělo zklidnit a uvolnit, energetické dráhy těla najdou opět ztracené cesty a tělo se dostane do harmonie.</p>
+                    <p class="service-desc">Kombinace technik na míru aktuálnímu stavu těla. Cílem je zklidnění a navrácení těla do přirozené harmonie.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>950 Kč</span></div>
@@ -171,22 +176,20 @@
                 </div>
             </div>
 
-            <!-- Baňkování -->
             <div class="service-card">
                 <div>
                     <h3>Baňkování</h3>
-                    <p class="service-desc">Přikládání skleněných nebo plastových nádobek na pokožku. Baňka se přisaje na kůži, kterou podtlak vtáhne dovnitř. Pokožka se prudce prokrví a zčervená, což uvolňuje hluboké blokády.</p>
+                    <p class="service-desc">Využívá podtlak k uvolnění hlubokých svalových blokád a prudkému prokrvení problematických partií.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>60 minut</span><span>850 Kč</span></div>
                 </div>
             </div>
 
-            <!-- Lymfatická masáž obličeje -->
             <div class="service-card">
                 <div>
                     <h3>Lymfatická masáž obličeje</h3>
-                    <p class="service-desc">Příjemná masáž lehkými doteky. Odstraňuje otoky ve tváři a v očním okolí, působí jako prevence proti migrénám. Využívá se při řešení vrásek nebo hloubkovém čištění pokožky.</p>
+                    <p class="service-desc">Jemná technika k odstranění otoků ve tváři a prevenci migrén. Působí hloubkově na čistění pokožky.</p>
                 </div>
                 <div class="service-price">
                     <div class="price-row"><span>30 minut</span><span>450 Kč</span></div>
@@ -196,14 +199,13 @@
         </div>
     </section>
 
-    <!-- Kontakt sekce -->
     <section class="section" id="kontakt">
         <div class="contact-card">
             <h2>Kontakt a rezervace</h2>
             <p style="font-size: 1.2rem;">Gabriela Kubíková</p>
             <p>📍 Jateční 13, Přerov, 750 02</p>
             <p>✉️ masazebibivital@gmail.com</p>
-            <hr style="opacity: 0.3; margin: 20px 0;">
+            <hr style="opacity: 0.15; margin: 20px 0;">
             <p><strong>Rezervace přijímám na čísle:</strong></p>
             <a href="tel:+420797727337" class="contact-link">+420 797 727 337</a>
         </div>
@@ -211,7 +213,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Masáže Bibi Vital - Přerov. Vytvořeno s radostí.</p>
+    <p>&copy; 2026 Masáže Bibi Vital - Přerov</p>
 </footer>
 
 </body>
